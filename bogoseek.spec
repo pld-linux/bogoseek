@@ -1,4 +1,5 @@
 Summary:	Disk Speed Graphs
+Summary(pl.UTF-8):	Wykresy szybkości dysku
 Name:		bogoseek
 Version:	0.3.2
 Release:	1
@@ -11,6 +12,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Disk throughput benchmarking tool.
+
+%description -l pl.UTF-8
+Narzędzie do pomiaru przepustowości dysku.
 
 %prep
 %setup -q
