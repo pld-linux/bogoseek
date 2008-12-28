@@ -1,12 +1,13 @@
 Summary:	Disk Speed Graphs
 Summary(pl.UTF-8):	Wykresy szybkości dysku
 Name:		bogoseek
-Version:	0.3.2
+Version:	0.3.5
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://sweaglesw.com/~djwong/programs/bogodisk/%{name}-%{version}.tar.gz
-# Source0-md5:	3b0e52b9ffd0c77d1fcebb98db743ef0
+# Source0-md5:	6f7f4cfb6d81a592a0e3287316b2c173
+Patch0:		%{name}-as-needed.patch
 URL:		http://sweaglesw.com/~djwong/programs/bogodisk/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -18,10 +19,13 @@ Narzędzie do pomiaru przepustowości dysku.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%configure
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -34,5 +38,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
