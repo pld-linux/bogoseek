@@ -1,12 +1,12 @@
 Summary:	Disk Speed Graphs
 Summary(pl.UTF-8):	Wykresy szybkości dysku
 Name:		bogoseek
-Version:	0.3.7
+Version:	0.3.8
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://sweaglesw.com/~djwong/programs/bogodisk/%{name}-%{version}.tar.gz
-# Source0-md5:	2b5fca89e42707326533ea0ae623d8d2
+# Source0-md5:	5c70583a345c3abedfe86660527d56a4
 URL:		http://sweaglesw.com/~djwong/programs/bogodisk/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
